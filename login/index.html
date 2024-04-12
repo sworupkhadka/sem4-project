@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #ffffff;
+            background-color: #DCC7AA;
             font-family: 'Roboto', sans-serif;
             color: #000000;
             margin: 0;
@@ -79,18 +79,19 @@
             padding: 15px 30px;
             border: none;
             border-radius: 10px;
-            background-color: #fac7c7;
-            color: rgb(11, 11, 11);
+            background-color: rgb(180, 240, 221);
+            color: rgb(0, 0, 0);
             font-size: 18px;
             cursor: pointer;
             opacity: 0;
             transform: translateY(20px);
             animation: fade-in 0.5s ease-out 1s forwards;
+            box-shadow: 3px 3px 3px 3px #393636;
         }
 
         .banner-button:hover {
             background-color: #0b0b0b;
-            color: rgb(200, 145, 145);
+            color: rgb(180, 240, 221);
         }
 
         .modules {
@@ -101,7 +102,7 @@
         }
 
         .module {
-            background-color: #b27d7d;
+            background-color: rgb(180, 240, 221);
             border-radius: 10px;
             padding: 20px;
             opacity: 0;
@@ -112,7 +113,7 @@
         }
 
         .module:hover {
-            box-shadow: 0 0 0 4px #d72727; /* Adjusted border on hover */
+            box-shadow: 0 0 0 4px #5a40c2; /* Adjusted border on hover */
         }
 
         .module-icon {
@@ -143,13 +144,13 @@
         }
 
         .footer {
-            background-color: #c2a2a2;
+            background-color: rgb(180, 240, 221);;
             color: rgb(0, 0, 0);
             padding: 20px;
             opacity: 0;
             transform: translateY(20px);
-            animation: fade-in 0.5s ease-out 2s forwards;
-            border border-radius: 5px;
+            animation: fade-in 2.5s ease-out 1.5s forwards;
+             border-radius: 20px;
         }
 
         .developers {
@@ -233,7 +234,7 @@
 <body>
     <div class="container">
         <div class="nav">
-            <img src="./logo.jpg" alt="Logo" class="logo">
+            <img src="logo.jpg" alt="Logo" class="logo">
             <div class="nav-links">
                 <a href="#" class="nav-item">Flights</a>
                 <a href="#" class="nav-item">Hotel</a>
@@ -245,7 +246,9 @@
         <div class="banner">
             <p id="username" class="banner-username"></p>
             <h1 class="banner-title" id="bannerTitle">Explore Destinations</h1>
-            <p class="banner-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="banner-subtitle">"Welcome to Online Travel Marketplace! Explore diverse tour packages across 10+ cities. 
+                From vibrant streets to serene landscapes, we've got your adventure covered.
+                 Let's turn your travel dreams into reality!"</p>
             <button class="banner-button" id="bannerButton">Explore</button>
         </div>
         <div class="modules">
