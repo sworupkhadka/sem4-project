@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Service</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Define some variables for colors, fonts, and sizes */
+        :root {
+            --primary-color: #ffffff;
+            /* A purple color */
+            --secondary-color: #000000;
+            /* A teal color */
+            --background-color: #DCC7AA;
+            /* A dark gray color */
+            --surface-color: #a0d2eb;
+            /* A slightly lighter gray color */
+            --error-color: #CF6679;
+            /* A pink color */
+            --on-primary-color: #000000;
+            /* A white color */
+            --on-secondary-color: #000000;
+            /* A black color */
+            --on-background-color: #000000;
+            /* A white color */
+            --on-surface-color: #000000;
+            /* A white color */
+            --on-error-color: #000000;
+            /* A black color */
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            /* A sans-serif font */
+            --font-size: 16px;
+            /* A base font size */
+            --font-weight: 400;
+            /* A normal font weight */
+            --line-height: 1.5;
+            /* A normal line height */
+
+            --border-radius: 4px;
+            /* A small border radius */
+            --padding: 10px;
+            /* A base padding size */
+            --margin: 10px;
+            /* A base margin size */
+            --transition-duration: 0.3s;
+            /* A base transition duration */
+            --transition-timing-function: ease-in-out;
+            /* A base transition timing function */
+        }
+
+        /* Set the background color and font properties for the body element */
+        body {
+            background-color: var(--background-color);
+            font-family: var(--font-family);
+            font-size: var(--font-size);
+            font-weight: var(--font-weight);
+            line-height: var(--line-height);
+            color: var(--on-background-color);
+        }
+
+        /* Center the h1 element and add some margin */
+        h1 {
+            text-align: center;
+            margin: var(--margin) 0;
+        }
+
+        /* Style the form element with a surface color and a box shadow */
+        form {
+            background-color: var(--surface-color);
+             box-shadow: 10px 10px 10px 10px rgba(0.5,0.5,0.5,0.5); /* Add shadow for depth */
+            max-width: 600px;
+            margin: 0 auto;
+            padding: var(--padding);
+        }
+
+        /* Style the label elements with a secondary color and a bold font weight */
+        label {
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 1px;
+        }
+
+        /* Style the input and textarea elements with a border and some padding */
+        input,
+        textarea {
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 5px solid black;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Add some margin to the input and textarea elements */
+        input+input,
+        textarea {
+            margin-top: var(--margin);
+        }
+
+        /* Change the border color and background color of the input and textarea elements when they are focused */
+        input:focus,
+        textarea:focus {
+            border-color: var(--primary-color);
+            background-color: rgb(255, 246, 246);
+            outline: none;
+            color: rgb(0, 0, 0);
+            
+        }
+
+        /* Add a hover effect to the submit button */
+        input[type="submit"] {
+            background-color: var(--primary-color);
+            color: var(--on-primary-color);
+            cursor: pointer;
+            transition: transform var(--transition-duration) var(--transition-timing-function);
+        }
+
+        input[type="submit"]:hover {
+            transform: scale(1.1);
+        }
+
+        /* Add a shake animation to the input and textarea elements when they are invalid */
+        input:invalid,
+        textarea:invalid {
+            animation: shake 0.5s;
+        }
+
+        /* Define the shake animation */
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(0);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+        .footer {
+            
+            color: rgb(0, 0, 0);
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-in 0.5s ease-out 2s forwards;
+        }
+
+        
+        .copy-right {
+            text-align: center;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .modules {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .module {
+                width: calc(50% - 10px);
+            }
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            margin: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: #2fa79b;
+        }
+    </style>
+    <script src="list_service.js" defer></script>
+   
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <img src="logo.jpg" alt="Logo" class="logo">
+            <nav class="nav-links">
+                <a href="#" class="nav-item">Flights</a>
+                <a href="#" class="nav-item">Hotel</a>
+                <a href="#" class="nav-item">Rental</a>
+                <a href="#" class="nav-item">Deals</a>
+                <a href="/logout" class="nav-item">Logout</a>
+            </nav>
+        </div>
+        <h1>List Your Travel Service</h1>
+    </header>
+
+    <main>
+        <form id="list-service-form">
+            <label for="name">Service Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" required></textarea><br>
+            <label for="price">Price:</label><br>
+            <input type="number" id="price" name="price" required><br>
+            <label for="date">Date:</label><br>
+            <input type="date" id="date" name="date" required><br>
+            <label for="time">Time:</label><br>
+            <input type="time" id="time" name="time" required><br>
+            <label for="image">Image:</label><br>
+            <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" required><br>
+            <input type="submit" value="List Service">
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer">
+            
+            <div class="copy-right">
+                <p>© 2024 Online Travel Marketplace. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
